@@ -1,0 +1,19 @@
+{
+    "name": "story-utils",
+    "version": "0.0.1",
+    "description": "Story utils.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/soulteary/Story-utils.git"
+    },
+    "author": "Su Yang <soulteary@gmail.com> (http://soulteary.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/soulteary/Story-utils/issues"
+    },
+    "homepage": "https://github.com/soulteary/Story-utils#readme"
+}

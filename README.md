@@ -1,2 +1,9 @@
-# note-util
-Utils for note.
+# Story-utils
+
+Story utils.
+
+# API
+
+- command.minimist
+- process.exit
+- process.goodbye
