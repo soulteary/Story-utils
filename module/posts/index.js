@@ -63,5 +63,6 @@ function sortOutPath (pathList) {
 
 module.exports = {
     scanDir    : scanDirs,
-    sortOutPath: sortOutPath
+    sortOutPath: sortOutPath,
+    fs         : fs
 };
