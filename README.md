@@ -4,6 +4,22 @@ Story utils.
 
 # API
 
-- command.minimist
-- process.exit
-- process.goodbye
+## command
+
+### minimist
+
+## process
+
+### setTitle
+
+### argv
+
+### cwd
+
+### exit
+
+### goodbye
+
+## string
+
+### hereDoc

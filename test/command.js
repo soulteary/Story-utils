@@ -1,2 +1,0 @@
-var command = require('../').command;
-

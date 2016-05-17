@@ -43,9 +43,9 @@ function setTitle (name) {
 }
 
 module.exports = {
-    setTitle : setTitle,
-    argv     : argv,
-    cwd      : cwd,
-    exit     : exit,
-    goodbye  : goodbye
+    setTitle: setTitle,
+    argv    : argv,
+    cwd     : cwd,
+    exit    : exit,
+    goodbye : goodbye
 };
