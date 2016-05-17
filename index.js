@@ -1,10 +1,11 @@
 /**
  * index.js
- * 
+ *
  * @desc export api for story-utils.
  */
 module.exports = {
-    command: require('./module/command/'),
+    command: require('./module/command'),
     process: require('./module/process'),
-    string : require('./module/string')
+    string : require('./module/string'),
+    posts  : require('./module/posts')
 };

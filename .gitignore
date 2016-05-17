@@ -35,3 +35,6 @@ node_modules
 # intellj
 *.iml
 .idea/
+
+# test posts
+test/content/posts/*
