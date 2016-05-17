@@ -1,6 +1,6 @@
 {
   "name": "story-utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Story utils.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/soulteary/Story-utils#readme",
   "dependencies": {
-    "story-fs": "0.0.6"
+    "story-fs": "0.0.7"
   }
 }
