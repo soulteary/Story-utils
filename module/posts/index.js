@@ -9,8 +9,6 @@ var util = require('../util/');
  * @returns {Promise}
  */
 function scanDirs (rootDir, excludeList) {
-    console.log(rootDir, excludeList)
-    console.log(fs.walk)
     var result = [];
     var promise = new Promise(function (resolve, reject) {
         fs
