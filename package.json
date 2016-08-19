@@ -1,11 +1,8 @@
 {
   "name": "story-utils",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Story utils.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/soulteary/Story-utils.git"
@@ -17,6 +14,6 @@
   },
   "homepage": "https://github.com/soulteary/Story-utils#readme",
   "dependencies": {
-    "story-fs": "0.0.7"
+    "story-fs": "0.0.10"
   }
 }
