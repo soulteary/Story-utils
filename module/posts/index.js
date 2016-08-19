@@ -1,66 +1,70 @@
+'use strict';
+
 var fs = require('story-fs');
 var util = require('../util/');
 
-
 /**
  * scan dirs and return file/dir list
- * @param rootDir
- * @param excludeList
+ *
+ * @param {string} rootDir
+ * @param {array} excludeList
  * @returns {Promise}
  */
-function scanDirs (rootDir, excludeList) {
-    var result = [];
-    var promise = new Promise(function (resolve, reject) {
-        fs
-            .walk(rootDir)
-            .on('data', function (item) {
-                if (!util.excludeFileByPath(item.path, excludeList)) result.push(item.path);
-            })
-            .on('end', function () {
-                return resolve(result);
-            })
-            .on('error', function (err) {
-                return reject(err);
-            })
-    });
-    return promise;
+function scanDirs(rootDir, excludeList) {
+  var result = [];
+  return new Promise(function(resolve, reject) {
+    fs
+        .walk(rootDir)
+        .on('data', function(item) {
+          if (!util.excludeFileByPath(item.path, excludeList)) {
+            result.push(item.path);
+          }
+        })
+        .on('end', function() {
+          resolve(result);
+        })
+        .on('error', function(err) {
+          reject(err);
+        });
+  });
 }
-
 
 /**
  * Sortout file/dir path list
- * @param pathList
+ *
+ * @param {array} pathList
  * @returns {Promise}
  */
-function sortOutPath (pathList) {
-    var promise = new Promise(function (resolve, reject) {
+function sortOutPath(pathList) {
+  return new Promise(function(resolve, reject) {
+    try {
+      var postFiles = [];
+      var dirs = [];
+      var metaFiles = [];
 
-        try {
-            var postFiles = [];
-            var dirs = [];
-            var metaFiles = [];
-
-            pathList.map(function (path) {
-                if (util.matchFileByExt(path, '.md')) return postFiles.push(path);
-                if (util.matchFileByExt(path, '.json')) return metaFiles.push(path);
-                return dirs.push(path);
-            })
-            return resolve({
-                    'post': postFiles,
-                    'meta': metaFiles,
-                    'dir' : dirs
-                }
-            );
-        } catch (e) {
-            return reject(e);
+      pathList.map(function(path) {
+        if (util.matchFileByExt(path, '.md')) {
+          return postFiles.push(path);
         }
-    });
-    return promise;
+        if (util.matchFileByExt(path, '.json')) {
+          return metaFiles.push(path);
+        }
+        return dirs.push(path);
+      });
+      resolve({
+            'post': postFiles,
+            'meta': metaFiles,
+            'dir': dirs
+          }
+      );
+    } catch (e) {
+      reject(e);
+    }
+  });
 }
 
-
 module.exports = {
-    scanDir    : scanDirs,
-    sortOutPath: sortOutPath,
-    fs         : fs
+  scanDir: scanDirs,
+  sortOutPath: sortOutPath,
+  fs: fs
 };

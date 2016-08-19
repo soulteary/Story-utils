@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
-    minimist : require('./minimist')
+  minimist: require('./minimist')
 };
